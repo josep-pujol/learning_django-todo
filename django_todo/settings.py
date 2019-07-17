@@ -26,8 +26,10 @@ SECRET_KEY = 'zajcv)=%^cp2q@od7$p6@&_*pdri+%*%a+jx0gtjrl-46iozan'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['7cb98e25b0ef44dabdca76f8437ac5f5.vfs.cloud9.us-east-1.amazonaws.com', 
-                 'https://learn-djangotodo.herokuapp.com/', ]
+# ALLOWED_HOSTS = ['7cb98e25b0ef44dabdca76f8437ac5f5.vfs.cloud9.us-east-1.amazonaws.com', 
+#                  'https://learn-djangotodo.herokuapp.com/', ]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
+                 os.environ.get('HOSTNAME')]
 
 
 # Application definition
@@ -83,7 +85,9 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.parse('postgres://obaumppixnrkek:267732d36dc01ef5a023680ab3a0f5b57b1ea2f01f8cc52c991f1669fea24b8f@ec2-54-228-246-214.eu-west-1.compute.amazonaws.com:5432/d3f6e3ljcf76ge')}
+# DATABASES = {'default': dj_database_url.parse('postgres://obaumppixnrkek:267732d36dc01ef5a023680ab3a0f5b57b1ea2f01f8cc52c991f1669fea24b8f@ec2-54-228-246-214.eu-west-1.compute.amazonaws.com:5432/d3f6e3ljcf76ge')}
+
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
