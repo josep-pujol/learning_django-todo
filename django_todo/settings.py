@@ -26,7 +26,8 @@ SECRET_KEY = 'zajcv)=%^cp2q@od7$p6@&_*pdri+%*%a+jx0gtjrl-46iozan'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['7cb98e25b0ef44dabdca76f8437ac5f5.vfs.cloud9.us-east-1.amazonaws.com', ]
+ALLOWED_HOSTS = ['7cb98e25b0ef44dabdca76f8437ac5f5.vfs.cloud9.us-east-1.amazonaws.com', 
+                 'https://learn-djangotodo.herokuapp.com/', ]
 
 
 # Application definition
